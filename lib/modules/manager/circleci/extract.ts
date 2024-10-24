@@ -5,11 +5,7 @@ import { OrbDatasource } from '../../datasource/orb';
 import * as npmVersioning from '../../versioning/npm';
 import { getDep } from '../dockerfile/extract';
 import type { PackageDependency, PackageFileContent } from '../types';
-import {
-  CircleCiFile,
-  type CircleCiJob,
-  type CircleCiOrb,
-} from './schema';
+import { CircleCiFile, type CircleCiJob, type CircleCiOrb } from './schema';
 
 function extractDefinition(
   definition: CircleCiOrb | CircleCiFile,
