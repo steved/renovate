@@ -7,13 +7,13 @@ import { getDep } from '../dockerfile/extract';
 import type { PackageDependency, PackageFileContent } from '../types';
 import {
   CircleCiFile,
-  type CircleCiFile as CircleCiFileType,
-  type CircleCiJob as CircleCiJobType,
-  type CircleCiOrb as CircleCiOrbType,
+  type CircleCiFile,
+  type CircleCiJob,
+  type CircleCiOrb,
 } from './schema';
 
 function extractDefinition(
-  definition: CircleCiOrbType | CircleCiFileType,
+  definition: CircleCiOrb | CircleCiFile,
   packageFile?: string,
 ): PackageDependency[] {
   const deps: PackageDependency[] = [];
@@ -37,7 +37,7 @@ function extractDefinition(
   }
 
   // extract environments
-  const environments: CircleCiJobType[] = [
+  const environments: CircleCiJob[] = [
     Object.values(definition.executors ?? {}),
     Object.values(definition.jobs ?? {}),
   ].flat();
