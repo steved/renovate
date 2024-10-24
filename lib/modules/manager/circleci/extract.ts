@@ -7,13 +7,12 @@ import { getDep } from '../dockerfile/extract';
 import type { PackageDependency, PackageFileContent } from '../types';
 import {
   CircleCiFile,
-  type CircleCiFile as CircleCiFileType,
   type CircleCiJob,
   type CircleCiOrb,
 } from './schema';
 
 function extractDefinition(
-  definition: CircleCiOrb | CircleCiFileType,
+  definition: CircleCiOrb | CircleCiFile,
   packageFile?: string,
 ): PackageDependency[] {
   const deps: PackageDependency[] = [];
